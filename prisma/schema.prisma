@@ -1,0 +1,199 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Single-workspace profile (demo-first app; no account required)
+model UserProfile {
+  id            String   @id @default("default")
+  displayName   String   @default("Friend")
+  avatarColor   String   @default("#314C3C")
+  interests     String?  // JSON string[]
+  goal          String?
+  onboarded     Boolean  @default(false)
+  demoMode      Boolean  @default(true)
+  reminderPrefs String?  // JSON {checkin, replenishment, community, routine, secondReminder, finalReminder}
+  notifCats     String?  // JSON {replenishment, checkin, community, system}
+  recentlyViewed String? // JSON product id[]
+  geminiApiKey  String?  // server-side only, never returned to client
+  geminiModel   String?  // optional model override
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Product {
+  id                    String    @id @default(cuid())
+  name                  String
+  brand                 String    @default("")
+  category              String    @default("Skincare") // Skincare | Hair Care | Body Care
+  artKey                String    @default("bottle") // bottle | jar | tube | dropper | pump | sachet
+  artHue                Int       @default(140)
+  sizeValue             Float?
+  unit                  String    @default("mL")
+  purchaseDate          DateTime?
+  openingDate           DateTime?
+  startingQuantity      Float?
+  currentQuantity       Float?
+  quantityKnown         Boolean   @default(true)
+  amountPerUse          Float?
+  frequency             String? // daily | twice-daily | alternate-days | weekly | custom
+  applicationsPerWeek   Float?
+  price                 Float?
+  purchaseLink          String?
+  expiryDate            DateTime?
+  batchNumber           String?
+  notes                 String?
+  instructions          String?
+  ingredients           String?
+  status                String    @default("active") // active | paused | finished | archived
+  firstReminderDays     Int       @default(7)
+  secondReminderEnabled Boolean   @default(true)
+  secondReminderDays    Int       @default(3)
+  finalReminderEnabled  Boolean   @default(true)
+  isDemo                Boolean   @default(false)
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  usageLogs             UsageLog[]
+  journeys              Journey[]
+}
+
+model UsageLog {
+  id         String   @id @default(cuid())
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  amountUsed Float
+  unit       String
+  method     String   @default("usage") // manual | usage | visual
+  note       String?
+  loggedAt   DateTime @default(now())
+}
+
+model Journey {
+  id                  String    @id @default(cuid())
+  title               String
+  productId           String?
+  product             Product?  @relation(fields: [productId], references: [id], onDelete: SetNull)
+  concern             String
+  startDate           DateTime  @default(now())
+  baselineCurrent     String?
+  baselineConcern     String?
+  baselineSatisfaction Int?
+  baselineNotes       String?
+  goal                String?
+  checkinFrequency    String    @default("weekly") // daily | weekly | biweekly
+  privateNotes        String?
+  visibility          String    @default("private") // private | community
+  isDemo              Boolean   @default(false)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  checkins            CheckIn[]
+}
+
+model CheckIn {
+  id              String   @id @default(cuid())
+  journeyId       String
+  journey         Journey  @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  date            DateTime @default(now())
+  overallRating   Int? // 1-5
+  change          String? // improved | same | worsened | unsure
+  consistency     String? // every-day | most-days | some-days | rarely
+  reactions       String? // none | mild | moderate | severe
+  reactionDetails String?
+  notes           String?
+  isDemo          Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model Notification {
+  id          String   @id @default(cuid())
+  type        String // checkin | replenishment-1 | replenishment-2 | replenishment-final | low-stock | runout | community | routine | reflection | system
+  category    String   @default("system") // replenishment | checkin | community | system
+  title       String
+  body        String
+  productId   String?
+  journeyId   String?
+  scheduledFor DateTime @default(now())
+  read        Boolean  @default(false)
+  dedupeKey   String?  @unique
+  isDemo      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model CommunityPost {
+  id            String    @id @default(cuid())
+  authorName    String
+  authorColor   String    @default("#314C3C")
+  title         String
+  content       String
+  category      String // skincare | haircare | bodycare
+  productName   String?
+  concern       String?
+  stage         String? // just-started | one-month | three-months | long-term
+  durationWeeks Int?
+  observations  String?
+  isSample      Boolean   @default(false)
+  saved         Boolean   @default(false)
+  reported      Boolean   @default(false)
+  reportReason  String?
+  createdAt     DateTime  @default(now())
+  comments      Comment[]
+  reactions     Reaction[]
+}
+
+model Comment {
+  id         String        @id @default(cuid())
+  postId     String
+  post       CommunityPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorName String
+  content    String
+  isSample   Boolean       @default(false)
+  createdAt  DateTime      @default(now())
+}
+
+model Reaction {
+  id        String        @id @default(cuid())
+  postId    String
+  post      CommunityPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  kind      String // supportive | insightful | been-there
+  createdAt DateTime      @default(now())
+}
+
+model GuideProduct {
+  id            String  @id @default(cuid())
+  name          String
+  brand         String
+  category      String
+  tagline       String?
+  description   String
+  ingredients   String? // lines: "Name|function"
+  directions    String?
+  precautions   String?
+  sizeInfo      String?
+  faqs          String? // JSON [{q,a}]
+  purchaseLink  String?
+  lastVerified  String?
+  isSample      Boolean @default(true)
+}
+
+model ChatMessage {
+  id         String   @id @default(cuid())
+  role       String // user | model
+  content    String
+  productId  String?
+  imageMime  String?
+  imageData  String?
+  demo       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+model SavedSummary {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  productId String?
+  createdAt DateTime @default(now())
+}

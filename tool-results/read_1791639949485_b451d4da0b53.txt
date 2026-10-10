@@ -1,0 +1,1153 @@
+     1→# PROJECT: PROOFPATH
+     2→## A Premium Product-Journey, Skincare Wellness and Community Web Application
+     3→
+     4→Build a complete, beautiful, functional, responsive web application called **ProofPath — Your Personal Product Journey Companion**.
+     5→
+     6→This is a consumer-facing digital wellness application designed for customers of **Be Bodywise, a brand under Mosaic Wellness**.
+     7→
+     8→The purpose of the application is to improve the customer experience after purchasing and beginning to use a skincare, hair-care, or body-care product. Customers often purchase products with certain expectations but may struggle to track their experience, understand product instructions, identify unwanted reactions, remember when their products will run out, or decide what to do next.
+     9→
+    10→ProofPath brings these disconnected experiences together into one intelligent, personalised, aesthetically pleasing platform.
+    11→
+    12→It combines product inventory management, progress tracking, AI-assisted skin support, replenishment prediction, product education, and a consent-based wellness community.
+    13→
+    14→The application must feel like a premium digital extension of the Be Bodywise brand: trustworthy, modern, calming, elegant, supportive, and exceptionally easy to use.
+    15→
+    16→**Do not build just a landing page or a static dashboard. Build a complete, interactive application with functional navigation, forms, product management, charts, reminders, a conversational AI interface, community interactions, and persistent data wherever the available environment supports it.**
+    17→
+    18→---
+    19→
+    20→# PART 1 — BRAND IDENTITY AND PRODUCT POSITIONING
+    21→
+    22→## 1.1 Brand relationship
+    23→
+    24→The product hierarchy must be clear:
+    25→
+    26→- Parent company: Mosaic Wellness.
+    27→- Consumer brand: Be Bodywise.
+    28→- Digital companion application: ProofPath.
+    29→- Tagline: “Your journey. Your progress. Your next step.”
+    30→
+    31→ProofPath is designed around the needs of Be Bodywise customers. It helps customers get more clarity and value from the products they already use rather than simply encouraging them to buy additional products.
+    32→
+    33→The interface should visibly establish the relationship between ProofPath and Be Bodywise while maintaining a distinct, recognisable identity for the application.
+    34→
+    35→Do not invent an official Mosaic Wellness endorsement, partnership, or certification. Treat this as a proposed digital companion concept unless official authorisation is provided.
+    36→
+    37→## 1.2 Branding requirements
+    38→
+    39→Use genuine Be Bodywise and Mosaic Wellness branding assets wherever available and permitted.
+    40→
+    41→The brand should be identifiable through:
+    42→
+    43→- The official Be Bodywise logo.
+    44→- The official Mosaic Wellness logo where appropriate.
+    45→- Official product photography and product packaging where available.
+    46→- Accurate product names and verified product information.
+    47→- A consistent brand colour and typography system.
+    48→- Tasteful placement of the brand identity throughout the app.
+    49→
+    50→Do not redraw official logos, invent a replacement logo that looks official, or use unrelated product images as if they were genuine Be Bodywise products.
+    51→
+    52→If the official assets cannot be retrieved, create an elegant text-based placeholder that reads “Be Bodywise” and mark it as a temporary brand placeholder. Make replacing it with the genuine logo straightforward.
+    53→
+    54→### Application identity
+    55→
+    56→Create a distinctive ProofPath wordmark.
+    57→
+    58→The word “ProofPath” should appear in a refined, modern typeface. Develop a subtle icon inspired by a path, a growing leaf, or a sequence of progress markers.
+    59→
+    60→The logo should communicate progress, self-awareness, trust, and continuity.
+    61→
+    62→It should be elegant rather than overly decorative.
+    63→
+    64→Use the ProofPath identity alongside Be Bodywise branding without suggesting that the two are the same company.
+    65→
+    66→---
+    67→
+    68→# PART 2 — VISUAL DESIGN AND AESTHETIC DIRECTION
+    69→
+    70→## 2.1 Overall creative direction
+    71→
+    72→The application should look like a premium skincare and wellness product designed by an experienced product-design team.
+    73→
+    74→Reference the visual quality of modern beauty brands, sophisticated editorial websites, minimalist lifestyle applications, and high-end wellness journals.
+    75→
+    76→The design should be:
+    77→
+    78→- Beautiful and visually cohesive.
+    79→- Calm, warm, and emotionally reassuring.
+    80→- Premium without feeling inaccessible.
+    81→- Feminine-leaning but inclusive.
+    82→- Modern and technology-driven without looking cold.
+    83→- Data-rich without feeling like a medical dashboard.
+    84→- Minimal, with generous whitespace and deliberate visual hierarchy.
+    85→
+    86→Avoid generic AI-generated dashboard aesthetics, excessive gradients, oversized emoji, random illustrations, dense tables, and too many cards competing for attention.
+    87→
+    88→Every screen should feel like it belongs to the same carefully designed product.
+    89→
+    90→## 2.2 Colour palette
+    91→
+    92→Use the following palette consistently:
+    93→
+    94→- Warm ivory: #FAF8F3 — main application background.
+    95→- Pure white: #FFFFFF — cards and content surfaces.
+    96→- Soft sage: #DCE7D8 — progress, wellness, and positive accents.
+    97→- Deep forest green: #314C3C — primary buttons and important text.
+    98→- Muted lavender: #E9E2F2 — AI support and reflective content.
+    99→- Dusty rose: #E8C9C5 — gentle highlights.
+   100→- Warm charcoal: #343630 — primary body text.
+   101→- Muted grey: #777970 — secondary text and supporting information.
+   102→- Soft border: #E8E5DD — dividers and card outlines.
+   103→
+   104→Use semantic colours consistently for warnings, errors, and success messages. Never rely on colour alone to communicate meaning.
+   105→
+   106→The overall interface should be predominantly light, with forest green providing contrast and restrained lavender and sage accents creating a distinctive visual identity.
+   107→
+   108→## 2.3 Typography
+   109→
+   110→Use an editorial serif font such as DM Serif Display or Playfair Display for major headings.
+   111→
+   112→Use Inter, Manrope, or a similar clean sans-serif font for body text, navigation, form fields, and data.
+   113→
+   114→Headings should feel refined and editorial. Body text should be highly readable.
+   115→
+   116→Use sentence case for most interface copy. Avoid unnecessary uppercase text.
+   117→
+   118→## 2.4 Components and layout
+   119→
+   120→Use:
+   121→
+   122→- Rounded cards with 16–24px corner radii.
+   123→- Thin, understated borders.
+   124→- Soft, restrained shadows.
+   125→- Beautiful product imagery.
+   126→- Clean line icons, preferably Lucide.
+   127→- Progress rings and elegant line charts.
+   128→- Small status indicators.
+   129→- Spacious layouts with consistent spacing.
+   130→- Smooth but restrained transitions.
+   131→- Thoughtful empty states.
+   132→- Clear loading, success, error, and disabled states.
+   133→
+   134→Use real whitespace to establish hierarchy rather than enclosing every item inside a separate card.
+   135→
+   136→## 2.5 Responsive design
+   137→
+   138→The app must work beautifully on:
+   139→
+   140→- Desktop browsers.
+   141→- Laptops.
+   142→- Tablets.
+   143→- Mobile browsers.
+   144→
+   145→On desktop, use a collapsible left sidebar and a spacious central content area.
+   146→
+   147→On mobile, use a compact top bar and a bottom navigation bar.
+   148→
+   149→Keep primary actions easy to reach. Ensure charts, modals, product forms, community posts, and AI chat remain usable on small screens.
+   150→
+   151→## 2.6 Motion and micro-interactions
+   152→
+   153→Add subtle animations for:
+   154→
+   155→- Opening a product journey.
+   156→- Updating a progress chart.
+   157→- Completing a check-in.
+   158→- Adding a product.
+   159→- Updating remaining product quantity.
+   160→- Receiving an in-app reminder.
+   161→- Switching between navigation sections.
+   162→
+   163→Use restrained motion and respect reduced-motion preferences.
+   164→
+   165→Animations must never delay important actions or make the application feel slow.
+   166→
+   167→---
+   168→
+   169→# PART 3 — APPLICATION STRUCTURE
+   170→
+   171→Create the following main sections:
+   172→
+   173→1. Home
+   174→2. My Products
+   175→3. My Journey
+   176→4. AI Skin Support
+   177→5. Community
+   178→6. Product Guide
+   179→7. Profile and Settings
+   180→
+   181→Include a notification centre, search where appropriate, and quick-access actions.
+   182→
+   183→All navigation elements must work.
+   184→
+   185→The default page after login should be the Home Dashboard.
+   186→
+   187→Provide a fully explorable demo mode so that an evaluator can test the application without creating an account.
+   188→
+   189→Clearly distinguish sample data from actual user data.
+   190→
+   191→---
+   192→
+   193→# PART 4 — WELCOME AND ONBOARDING
+   194→
+   195→Create an elegant onboarding experience that explains the app's value in a few simple screens.
+   196→
+   197→### Welcome screen
+   198→
+   199→Display:
+   200→
+   201→**“Your wellness journey deserves more than guesswork.”**
+   202→
+   203→Supporting text:
+   204→
+   205→“Track your product experience, understand your progress, manage your essentials, and find your next step — all in one place.”
+   206→
+   207→Include a beautiful visual showing a product, a progress timeline, and a calm wellness-inspired background.
+   208→
+   209→Primary button: “Start my journey”
+   210→
+   211→Secondary button: “Explore demo”
+   212→
+   213→### Personalisation
+   214→
+   215→Allow users to select their interests:
+   216→
+   217→- Skincare.
+   218→- Hair care.
+   219→- Body care.
+   220→- Product routine management.
+   221→- Ingredient education.
+   222→- Personal progress tracking.
+   223→- Product replenishment.
+   224→
+   225→Allow users to choose their main goal:
+   226→
+   227→- Understand my product experience.
+   228→- Track changes over time.
+   229→- Maintain a consistent routine.
+   230→- Get guidance when something feels wrong.
+   231→- Never run out of my essentials.
+   232→- Learn from other people's experiences.
+   233→
+   234→Allow optional profile setup, including a display name and reminder preferences.
+   235→
+   236→Do not collect sensitive health information unless it is genuinely needed for a requested feature and the user gives appropriate consent.
+   237→
+   238→Allow users to skip onboarding and enter the app immediately.
+   239→
+   240→---
+   241→
+   242→# PART 5 — HOME DASHBOARD
+   243→
+   244→Design the dashboard to feel like a personalised wellness journal rather than an analytics tool.
+   245→
+   246→At the top, display a warm greeting:
+   247→
+   248→“Good morning, [Display Name].”
+   249→
+   250→Below it, display:
+   251→
+   252→“Small steps. Meaningful insights.”
+   253→
+   254→## 5.1 Active product journeys
+   255→
+   256→Show the user's active products as attractive product cards.
+   257→
+   258→Each card should contain:
+   259→
+   260→- Product image.
+   261→- Brand and product name.
+   262→- Product category.
+   263→- Date started.
+   264→- Journey duration.
+   265→- Most recent self-reported check-in.
+   266→- Next planned check-in.
+   267→- Estimated quantity remaining, if configured.
+   268→
+   269→Clicking a card must open the associated product detail page.
+   270→
+   271→## 5.2 Quick actions
+   272→
+   273→Display four prominent quick actions:
+   274→
+   275→- Log a check-in.
+   276→- Add a product.
+   277→- Ask AI Skin Support.
+   278→- View my progress.
+   279→
+   280→On mobile, make these easy to tap.
+   281→
+   282→## 5.3 Supply overview
+   283→
+   284→Display the user's tracked product supplies.
+   285→
+   286→Example:
+   287→
+   288→“Your moisturiser has approximately 14 days remaining.”
+   289→
+   290→“Your shampoo may need replenishing next week.”
+   291→
+   292→“Your serum is running low.”
+   293→
+   294→Every estimate must be based on the product data available and clearly identified as an estimate.
+   295→
+   296→## 5.4 Recent activity
+   297→
+   298→Display:
+   299→
+   300→- Recent check-ins.
+   301→- New reminders.
+   302→- Recent product updates.
+   303→- Community replies.
+   304→- Recently viewed journeys.
+   305→
+   306→## 5.5 Weekly reflection
+   307→
+   308→Show a concise summary based on actual recorded entries.
+   309→
+   310→For example:
+   311→
+   312→“You completed three check-ins this month and reported a positive experience in two of them.”
+   313→
+   314→Do not invent progress, fabricate historical records, or claim that a product caused a change.
+   315→
+   316→When there is insufficient data, display an encouraging prompt to record the first check-in.
+   317→
+   318→---
+   319→
+   320→# PART 6 — MY PRODUCTS: INVENTORY AND PRODUCT MANAGEMENT
+   321→
+   322→This is one of the most important features.
+   323→
+   324→Users should be able to add, view, edit, archive, and delete products.
+   325→
+   326→## 6.1 Add Product
+   327→
+   328→Create an elegant form titled:
+   329→
+   330→“Add to My Products”
+   331→
+   332→Include these fields:
+   333→
+   334→- Product name.
+   335→- Brand.
+   336→- Product category.
+   337→- Product image.
+   338→- Product size or total volume.
+   339→- Unit of measurement.
+   340→- Purchase date.
+   341→- Opening date.
+   342→- Starting quantity.
+   343→- Estimated current quantity.
+   344→- Typical amount used per application.
+   345→- Frequency of use.
+   346→- Estimated applications per week.
+   347→- Optional product price.
+   348→- Optional purchase link.
+   349→- Optional expiry date.
+   350→- Optional batch number.
+   351→- Product notes.
+   352→
+   353→Supported units should include mL, L, g, kg, pieces, capsules, tablets, and other appropriate units.
+   354→
+   355→For products that cannot be measured precisely, provide manual quantity tracking.
+   356→
+   357→Allow the user to mark a product as active, paused, finished, or archived.
+   358→
+   359→## 6.2 Product detail page
+   360→
+   361→Each product should have a dedicated page with:
+   362→
+   363→- Product image and verified name.
+   364→- Quantity remaining.
+   365→- Original quantity.
+   366→- Estimated usage rate.
+   367→- Estimated days remaining.
+   368→- Projected run-out date.
+   369→- Purchase and opening dates.
+   370→- Associated product journey.
+   371→- Recent usage history.
+   372→- Upcoming reminders.
+   373→- Product information and instructions where available.
+   374→
+   375→Use a visually attractive quantity indicator.
+   376→
+   377→Example:
+   378→
+   379→“Your product is approximately 65% used.”
+   380→
+   381→“Estimated supply remaining: 18 days.”
+   382→
+   383→If the remaining quantity is unknown, show an option to update it rather than fabricating a measurement.
+   384→
+   385→## 6.3 Quantity tracking methods
+   386→
+   387→Offer three methods.
+   388→
+   389→**Method A: Manual update**
+   390→
+   391→The user enters the current estimated quantity.
+   392→
+   393→**Method B: Usage logging**
+   394→
+   395→The user records the amount used during each application. If the application amount is known, the app adjusts the estimated remaining quantity.
+   396→
+   397→**Method C: Quick visual update**
+   398→
+   399→The user chooses:
+   400→
+   401→- Full.
+   402→- About three-quarters.
+   403→- About half.
+   404→- About one-quarter.
+   405→- Almost empty.
+   406→
+   407→These are user estimates, not automatic physical measurements.
+   408→
+   409→## 6.4 Usage calculations
+   410→
+   411→Implement real quantity calculations.
+   412→
+   413→Formula:
+   414→
+   415→Estimated daily consumption = Total estimated consumption over the tracking period ÷ Number of days in that period.
+   416→
+   417→Estimated days remaining = Current estimated quantity ÷ Estimated daily consumption.
+   418→
+   419→Estimated run-out date = Current date + Estimated days remaining.
+   420→
+   421→Example:
+   422→
+   423→- Starting quantity: 100 mL.
+   424→- Estimated current quantity: 30 mL.
+   425→- Estimated daily consumption: 2 mL.
+   426→- Estimated supply remaining: 15 days.
+   427→
+   428→Display this calculation in an optional information panel so users understand where the estimate comes from.
+   429→
+   430→Allow users to correct consumption assumptions.
+   431→
+   432→Account for irregular usage and avoid showing misleading precision.
+   433→
+   434→If consumption is zero, unknown, or insufficiently established, do not invent a run-out date.
+   435→
+   436→---
+   437→
+   438→# PART 7 — SMART REPLENISHMENT REMINDERS
+   439→
+   440→This feature helps customers avoid running out of essential products unexpectedly.
+   441→
+   442→## 7.1 Reminder scheduling
+   443→
+   444→Provide customisable reminder settings for each product.
+   445→
+   446→Default behaviour:
+   447→
+   448→- First reminder: seven days before estimated depletion.
+   449→- Second reminder: three days before estimated depletion, if enabled.
+   450→- Final reminder: on the estimated run-out date, if enabled.
+   451→
+   452→If a product is estimated to run out in 14 days, schedule the first reminder for approximately seven days later.
+   453→
+   454→If the product is already expected to run out within seven days, show a low-stock alert immediately.
+   455→
+   456→Recalculate reminders whenever the user changes the remaining quantity, usage frequency, or consumption estimate.
+   457→
+   458→Avoid duplicate reminders.
+   459→
+   460→When a product is marked finished or archived, cancel its pending replenishment reminders.
+   461→
+   462→## 7.2 Reminder interface
+   463→
+   464→Create a dedicated “Running Low” section.
+   465→
+   466→Each reminder card should display:
+   467→
+   468→- Product image.
+   469→- Product name.
+   470→- Estimated days remaining.
+   471→- Estimated run-out date.
+   472→- Reminder status.
+   473→
+   474→Actions:
+   475→
+   476→- View product.
+   477→- Update quantity.
+   478→- Reorder.
+   479→- Remind me later.
+   480→- Disable reminder.
+   481→
+   482→If an official purchase link is available and verified, offer an external purchase link.
+   483→
+   484→Never invent a product URL, place an order automatically, or claim that a purchase has occurred.
+   485→
+   486→## 7.3 Notification delivery
+   487→
+   488→Implement functional in-app reminders.
+   489→
+   490→Use actual date-based scheduling logic rather than hard-coded countdowns.
+   491→
+   492→If persistent reminders while the browser is closed are required, implement an appropriate backend scheduler or notification service when available.
+   493→
+   494→Explain limitations if the generator cannot support background delivery.
+   495→
+   496→Do not falsely claim that an in-app reminder has been delivered as a browser push notification or email.
+   497→
+   498→---
+   499→
+   500→# PART 8 — MY JOURNEY: PRODUCT EXPERIENCE AND PROGRESS TRACKING
+   501→
+   502→This feature allows users to document their experience with each product.
+   503→
+   504→## 8.1 Create a journey
+   505→
+   506→Allow users to create a journey with:
+   507→
+   508→- Journey title.
+   509→- Associated product or products.
+   510→- Concern being tracked.
+   511→- Start date.
+   512→- Baseline observations.
+   513→- Personal goal.
+   514→- Check-in frequency.
+   515→- Optional private notes.
+   516→
+   517→Example:
+   518→
+   519→“Body moisturiser journey”
+   520→
+   521→“Hair-care routine”
+   522→
+   523→“Tracking skin texture”
+   524→
+   525→Allow multiple journeys for different products or concerns.
+   526→
+   527→## 8.2 Baseline entry
+   528→
+   529→Before tracking begins, let the user describe their starting experience.
+   530→
+   531→Use simple fields:
+   532→
+   533→- Current experience.
+   534→- Main concern.
+   535→- Satisfaction rating.
+   536→- Relevant observations.
+   537→- Personal goal.
+   538→
+   539→Optional photos may be attached, but they must never be mandatory.
+   540→
+   541→Do not diagnose conditions or imply that subjective baseline entries are clinical measurements.
+   542→
+   543→## 8.3 Weekly check-ins
+   544→
+   545→Create a short, mobile-friendly form.
+   546→
+   547→Questions should include:
+   548→
+   549→1. How has your overall experience been this week?
+   550→2. Have you noticed any changes?
+   551→3. How consistently have you used the product?
+   552→4. Have you experienced any unwanted reactions?
+   553→5. Is there anything you would like to record?
+   554→
+   555→Allow an overall rating from 1 to 5.
+   556→
+   557→Allow users to choose:
+   558→
+   559→- Improved.
+   560→- No noticeable change.
+   561→- Worsened.
+   562→- Unsure.
+   563→
+   564→Allow optional notes and photos.
+   565→
+   566→Users must be able to edit or delete their own entries.
+   567→
+   568→If a potentially serious reaction is reported, interrupt the routine flow with appropriate safety guidance.
+   569→
+   570→## 8.4 Progress timeline
+   571→
+   572→Display check-ins in a chronological visual timeline.
+   573→
+   574→Include:
+   575→
+   576→- Date.
+   577→- Rating.
+   578→- Reported change.
+   579→- Usage consistency.
+   580→- Notes.
+   581→- Relevant milestones.
+   582→- Product or routine changes.
+   583→
+   584→Use clean cards and a readable timeline.
+   585→
+   586→## 8.5 Charts
+   587→
+   588→Use interactive line charts to show self-reported ratings over time.
+   589→
+   590→Allow filtering by date range and product.
+   591→
+   592→Charts must use actual saved data.
+   593→
+   594→Label them clearly as personal, self-reported experiences.
+   595→
+   596→Never claim that a change in the chart proves that a product caused a result.
+   597→
+   598→## 8.6 Journey insights
+   599→
+   600→Generate concise, data-grounded summaries.
+   601→
+   602→Example:
+   603→
+   604→“You recorded four check-ins over the last month. Your reported experience was positive in two entries, unchanged in one, and uncertain in one.”
+   605→
+   606→Highlight missing entries without shaming the user.
+   607→
+   608→Do not use guilt-based reminders or imply that inconsistent tracking invalidates the user's experience.
+   609→
+   610→---
+   611→
+   612→# PART 9 — AI SKIN SUPPORT
+   613→
+   614→Create a dedicated AI-assisted skin support feature called:
+   615→
+   616→**“Ask Skin Guide”**
+   617→
+   618→Supporting tagline:
+   619→
+   620→“Tell us what you're experiencing. Let's work out a safe next step.”
+   621→
+   622→This feature allows users to ask questions when they notice redness, itching, bumps, dryness, irritation, burning, or other changes after using a product.
+   623→
+   624→It is a safety-conscious educational assistant, not a doctor or dermatologist.
+   625→
+   626→Never label it “your AI doctor” in a way that suggests it is a licensed medical professional.
+   627→
+   628→## 9.1 Chat interface
+   629→
+   630→Create a beautiful, reassuring conversational interface.
+   631→
+   632→Include:
+   633→
+   634→- A welcome message.
+   635→- A visible explanation of limitations.
+   636→- Suggested question cards.
+   637→- Text input.
+   638→- Send button.
+   639→- Optional image upload, only when safely supported.
+   640→- Selected product context.
+   641→- Conversation history.
+   642→- Clear-history control.
+   643→- A prominent route to appropriate medical help.
+   644→
+   645→Suggested prompts:
+   646→
+   647→- “I noticed bumps after starting a new product.”
+   648→- “My skin feels itchy after applying a moisturiser.”
+   649→- “I have redness after using an exfoliating product.”
+   650→- “Help me understand this ingredient list.”
+   651→- “Help me prepare questions for a dermatologist.”
+   652→
+   653→## 9.2 Information gathering
+   654→
+   655→When a user describes a concern, the assistant should ask relevant, concise questions, such as:
+   656→
+   657→- Which product did you use?
+   658→- When did you first notice the change?
+   659→- What symptoms are you experiencing?
+   660→- Are the symptoms mild, moderate, severe, or rapidly worsening?
+   661→- Is the reaction spreading?
+   662→- Have you stopped using the suspected product?
+   663→
+   664→Do not overwhelm the user with a long questionnaire.
+   665→
+   666→Prioritise urgent safety guidance if severe symptoms are already apparent.
+   667→
+   668→## 9.3 Safe response behaviour
+   669→
+   670→The AI must:
+   671→
+   672→- Explain that timing alone cannot prove a product caused a reaction.
+   673→- Provide general educational information.
+   674→- Avoid definitive diagnoses.
+   675→- Avoid prescribing medication.
+   676→- Avoid unsupported claims about ingredients.
+   677→- Avoid recommending potentially irritating home remedies.
+   678→- Avoid advising the user to continue applying a product to test the reaction.
+   679→- Suggest appropriate professional evaluation when symptoms warrant it.
+   680→- Help users prepare a clear symptom summary for a qualified healthcare professional.
+   681→
+   682→For suspected product irritation, the assistant may recommend avoiding further exposure to the suspected product pending appropriate advice.
+   683→
+   684→Do not recommend introducing additional active skincare products to treat an unexplained reaction.
+   685→
+   686→## 9.4 Emergency handling
+   687→
+   688→If the user reports difficulty breathing, throat or tongue swelling, fainting, or other potentially severe allergic-reaction symptoms, immediately advise seeking emergency medical help.
+   689→
+   690→For severe, rapidly worsening, widespread, painful, or blistering reactions, recommend urgent professional assessment.
+   691→
+   692→For persistent or concerning bumps, recommend evaluation by a qualified healthcare professional.
+   693→
+   694→Do not delay safety guidance in order to collect more information.
+   695→
+   696→## 9.5 Product-aware guidance
+   697→
+   698→When the user selects a product from My Products, allow the assistant to use its verified product information.
+   699→
+   700→Where available, display:
+   701→
+   702→- Product name.
+   703→- Ingredient list.
+   704→- Directions for use.
+   705→- Relevant precautions.
+   706→- Official product information link.
+   707→
+   708→If product data is unavailable, ask the user to provide the label or consult the official product information.
+   709→
+   710→Never invent ingredients or claim to know a product's composition without reliable data.
+   711→
+   712→## 9.6 AI implementation
+   713→
+   714→If a real AI service is available, connect it through a secure backend.
+   715→
+   716→Store API credentials in server-side environment variables.
+   717→
+   718→Use appropriate authentication, rate limiting, input validation, and error handling.
+   719→
+   720→Use explicit safety instructions for health-related conversations.
+   721→
+   722→Do not expose private conversations to the public community.
+   723→
+   724→Do not use user health information for brand-facing analytics without separate, explicit consent.
+   725→
+   726→If a live AI integration is unavailable, create a clearly labelled demonstration assistant with predetermined sample interactions. Do not pretend a simulated response was produced by a real medical professional or a functioning medical AI service.
+   727→
+   728→---
+   729→
+   730→# PART 10 — COMMUNITY: REAL EXPERIENCES, SHARED VOLUNTARILY
+   731→
+   732→Create a dedicated community called:
+   733→
+   734→**“The ProofPath Circle”**
+   735→
+   736→Tagline:
+   737→
+   738→“Different journeys. Shared experiences. More informed choices.”
+   739→
+   740→The community should feel warm, supportive, inclusive, and beautifully designed.
+   741→
+   742→It should not resemble a generic social media clone.
+   743→
+   744→## 10.1 Community feed
+   745→
+   746→Display user-created experience cards containing:
+   747→
+   748→- Display name or approved anonymous identity.
+   749→- Optional avatar.
+   750→- Product category.
+   751→- Product name, if the user chooses to share it.
+   752→- Journey duration.
+   753→- User-written experience.
+   754→- Self-reported observations.
+   755→- Optional progress images.
+   756→- Date shared.
+   757→- Supportive reactions.
+   758→- Comments.
+   759→- Save/bookmark action.
+   760→- Report action.
+   761→
+   762→Example:
+   763→
+   764→“My four-week skincare journal”
+   765→
+   766→“What I noticed, what stayed the same, and what I learned.”
+   767→
+   768→Another example:
+   769→
+   770→“I started tracking my routine to understand how consistent I was. Here is what my personal timeline looks like.”
+   771→
+   772→All demonstration posts must be labelled as sample content.
+   773→
+   774→Never invent real customer testimonials or present sample posts as verified customer outcomes.
+   775→
+   776→## 10.2 Sharing controls
+   777→
+   778→Privacy must be the default.
+   779→
+   780→Every journey starts as private.
+   781→
+   782→Allow users to choose:
+   783→
+   784→**Private:** Only visible to the account holder.
+   785→
+   786→**Community:** Visible to community members under the selected display identity.
+   787→
+   788→**Public:** Visible through a public journey page, only if public publishing is implemented.
+   789→
+   790→Require explicit confirmation before publishing.
+   791→
+   792→Explain what information will become visible.
+   793→
+   794→Allow users to edit posts, delete posts, withdraw consent, and remove optional images.
+   795→
+   796→Never publish:
+   797→
+   798→- Phone numbers.
+   799→- Email addresses.
+   800→- Private AI conversations.
+   801→- Private notes.
+   802→- Health records.
+   803→- Exact location data.
+   804→- Any information the user has not chosen to share.
+   805→
+   806→Do not automatically convert a private journey into a community post.
+   807→
+   808→## 10.3 Discovery and interactions
+   809→
+   810→Allow users to:
+   811→
+   812→- Browse the latest experiences.
+   813→- Filter by product category.
+   814→- Filter by concern category.
+   815→- Filter by journey stage.
+   816→- Search public posts.
+   817→- Save helpful posts.
+   818→- React supportively.
+   819→- Comment on experiences.
+   820→- Follow public journeys, if implemented.
+   821→
+   822→Do not design the community around competitive progress rankings or appearance-based comparisons.
+   823→
+   824→Avoid features that encourage users to compare their bodies or skin negatively with other people.
+   825→
+   826→## 10.4 Moderation
+   827→
+   828→Implement community reporting and moderation controls.
+   829→
+   830→Allow users to report:
+   831→
+   832→- Harmful medical advice.
+   833→- Harassment.
+   834→- Spam.
+   835→- False or misleading health claims.
+   836→- Non-consensual images.
+   837→- Personal information shared without permission.
+   838→
+   839→Provide clear community guidelines.
+   840→
+   841→Do not present anecdotal posts as clinical evidence or proof that a product treats a condition.
+   842→
+   843→---
+   844→
+   845→# PART 11 — PRODUCT GUIDE AND INGREDIENT LIBRARY
+   846→
+   847→Create a searchable product information section.
+   848→
+   849→Users should be able to browse products by category or search by product name, brand, or ingredient.
+   850→
+   851→Each product page should display verified information where available:
+   852→
+   853→- Product name and image.
+   854→- Product category.
+   855→- Product description.
+   856→- Ingredient list.
+   857→- Stated ingredient functions.
+   858→- Directions for use.
+   859→- Published precautions.
+   860→- Product size.
+   861→- Frequently asked questions.
+   862→- Official purchase link.
+   863→- Date information was last verified.
+   864→
+   865→Use clear, approachable language.
+   866→
+   867→Explain ingredients educationally without making unsupported efficacy claims.
+   868→
+   869→Do not claim that an ingredient is safe or suitable for every person.
+   870→
+   871→Do not fabricate product specifications, ingredients, pricing, product availability, or official links.
+   872→
+   873→If the data is unavailable, show a helpful message and allow users to add product details manually.
+   874→
+   875→---
+   876→
+   877→# PART 12 — NOTIFICATIONS AND REMINDERS
+   878→
+   879→Create a central notification centre.
+   880→
+   881→Include notifications for:
+   882→
+   883→- Weekly check-ins.
+   884→- Replenishment reminders.
+   885→- Low-stock alerts.
+   886→- Upcoming product run-out dates.
+   887→- Community replies.
+   888→- Saved journey updates, where relevant.
+   889→- User-configured routine reminders.
+   890→
+   891→Allow users to customise reminder timing and disable categories.
+   892→
+   893→Use a calm, non-intrusive notification style.
+   894→
+   895→Examples:
+   896→
+   897→“Your product may need replenishing next week.”
+   898→
+   899→“Your weekly journey reflection is ready.”
+   900→
+   901→“You have a new reply to your community post.”
+   902→
+   903→Never use manipulative urgency or pressure users to buy products.
+   904→
+   905→In-app notifications must work within the application.
+   906→
+   907→Browser push notifications, email delivery, and background scheduling should only be described as functional if the required infrastructure has been implemented.
+   908→
+   909→---
+   910→
+   911→# PART 13 — PROFILE AND PRIVACY
+   912→
+   913→Create a Profile & Settings page.
+   914→
+   915→Include:
+   916→
+   917→- Display name.
+   918→- Optional avatar.
+   919→- Account settings.
+   920→- Notification preferences.
+   921→- Privacy preferences.
+   922→- Community-sharing preferences.
+   923→- Data export, if implemented.
+   924→- Data deletion controls.
+   925→- AI conversation history controls.
+   926→- Account deletion, if authentication is implemented.
+   927→
+   928→Make privacy settings easy to understand.
+   929→
+   930→Keep private product journeys separate from publicly shared content.
+   931→
+   932→Use authentication and authorisation when a backend is available.
+   933→
+   934→Each user must only be able to access their own private records.
+   935→
+   936→Never expose API secrets or private health data in frontend code.
+   937→
+   938→---
+   939→
+   940→# PART 14 — FUNCTIONALITY AND TECHNICAL ARCHITECTURE
+   941→
+   942→Build a genuine working web application.
+   943→
+   944→Preferred stack:
+   945→
+   946→- React.
+   947→- TypeScript.
+   948→- Tailwind CSS.
+   949→- Lucide icons.
+   950→- Recharts for progress visualisations.
+   951→- A suitable backend and database if supported by the environment.
+   952→
+   953→You may use another stack if it offers more reliable deployment and persistence.
+   954→
+   955→## 14.1 Data models
+   956→
+   957→Create appropriate data models for:
+   958→
+   959→- Users.
+   960→- Products.
+   961→- Product inventory.
+   962→- Product usage entries.
+   963→- Product journeys.
+   964→- Check-ins.
+   965→- Notifications.
+   966→- Replenishment schedules.
+   967→- AI support conversations.
+   968→- Community posts.
+   969→- Comments and reactions.
+   970→- Privacy and sharing preferences.
+   971→
+   972→## 14.2 Persistence
+   973→
+   974→If a backend is available, use it for persistent user data.
+   975→
+   976→If the environment supports only frontend functionality, use local storage for the demo and clearly disclose that the information is stored locally.
+   977→
+   978→Do not claim that information synchronises across devices unless a working backend supports it.
+   979→
+   980→## 14.3 Required operations
+   981→
+   982→Implement functional create, read, update, and delete operations for:
+   983→
+   984→- Products.
+   985→- Quantity records.
+   986→- Product journeys.
+   987→- Check-ins.
+   988→- User-configurable reminders.
+   989→- Community posts.
+   990→- Relevant profile settings.
+   991→
+   992→Ensure navigation, filters, buttons, forms, dialogs, and charts actually work.
+   993→
+   994→Do not leave major buttons as decorative elements.
+   995→
+   996→Use validation and informative error messages.
+   997→
+   998→## 14.4 Security and data integrity
+   999→
+  1000→Validate all inputs.
+  1001→
+  1002→Prevent negative product quantities.
+  1003→
+  1004→Prevent duplicate reminders.
+  1005→
+  1006→Respect privacy permissions.
+  1007→
+  1008→Protect private routes and records.
+  1009→
+  1010→Use secure server-side authorisation where applicable.
+  1011→
+  1012→Do not include actual customer names, telephone numbers, medical records, or other real personal information in the demonstration data.
+  1013→
+  1014→## 14.5 Accessibility
+  1015→
+  1016→Provide:
+  1017→
+  1018→- Keyboard navigation.
+  1019→- Accessible form labels.
+  1020→- Visible focus indicators.
+  1021→- Sufficient colour contrast.
+  1022→- Appropriate image alt text.
+  1023→- Accessible dialog behaviour.
+  1024→- Reduced-motion support.
+  1025→- Clear status text that does not depend on colour alone.
+  1026→
+  1027→---
+  1028→
+  1029→# PART 15 — DEMONSTRATION DATA
+  1030→
+  1031→Populate the application with realistic but entirely fictional sample data.
+  1032→
+  1033→For example, create:
+  1034→
+  1035→- One fictional user.
+  1036→- Three sample products.
+  1037→- Two product journeys.
+  1038→- Several weekly check-ins.
+  1039→- One upcoming replenishment reminder.
+  1040→- Several community posts.
+  1041→- A sample AI support conversation.
+  1042→
+  1043→Use obviously fictional demonstration identities.
+  1044→
+  1045→Do not use real customers' personal information.
+  1046→
+  1047→Clearly label seeded records as demo content.
+  1048→
+  1049→Use real product information only when it has been verified from reliable sources. Otherwise use clearly labelled generic sample products.
+  1050→
+  1051→The purpose of demo data is to make the app immediately explorable without misrepresenting customer experiences or product results.
+  1052→
+  1053→---
+  1054→
+  1055→# PART 16 — THE COMPLETE DEMO JOURNEY
+  1056→
+  1057→The following sequence must be possible within the finished application.
+  1058→
+  1059→### Step 1: Enter the app
+  1060→
+  1061→The user opens ProofPath and sees the branded dashboard.
+  1062→
+  1063→### Step 2: Add a product
+  1064→
+  1065→The user adds a moisturiser with a starting volume of 100 mL.
+  1066→
+  1067→They enter:
+  1068→
+  1069→- Current estimated quantity: 30 mL.
+  1070→- Estimated usage: 2 mL per day.
+  1071→
+  1072→The app calculates approximately 15 days of supply remaining.
+  1073→
+  1074→It displays the estimated run-out date and schedules the first reminder seven days before that date, subject to the user's preferences.
+  1075→
+  1076→### Step 3: Create a journey
+  1077→
+  1078→The user creates a skincare journey and records a baseline observation.
+  1079→
+  1080→### Step 4: Log a check-in
+  1081→
+  1082→The user records a weekly rating and an observation.
+  1083→
+  1084→The app saves the entry and updates the timeline and chart.
+  1085→
+  1086→### Step 5: Explore AI Skin Support
+  1087→
+  1088→The user opens the AI assistant and selects the moisturiser.
+  1089→
+  1090→They describe noticing bumps after applying it.
+  1091→
+  1092→The assistant asks relevant questions, provides cautious educational guidance, avoids diagnosing the cause, and recommends professional evaluation when appropriate.
+  1093→
+  1094→The user can save a private summary of their experience.
+  1095→
+  1096→### Step 6: Explore the community
+  1097→
+  1098→The user browses sample journeys, reads an experience, and sees the distinction between private and shared content.
+  1099→
+  1100→The user can create a post and explicitly choose whether it is private or shared.
+  1101→
+  1102→### Step 7: Return to the dashboard
+  1103→
+  1104→The dashboard reflects the product, journey, check-in, and replenishment data created during the session.
+  1105→
+  1106→The application should behave consistently throughout this sequence.
+  1107→
+  1108→---
+  1109→
+  1110→# PART 17 — FINAL QUALITY REQUIREMENTS
+  1111→
+  1112→Before delivering the application, verify all of the following:
+  1113→
+  1114→1. The application has a consistent ProofPath visual identity.
+  1115→2. Be Bodywise branding is included using genuine or clearly marked placeholder assets.
+  1116→3. The relationship to Mosaic Wellness is represented accurately.
+  1117→4. All navigation links work.
+  1118→5. Product creation and editing work.
+  1119→6. Product quantity calculations work.
+  1120→7. Estimated run-out dates update when quantities change.
+  1121→8. Replenishment reminders use actual dates and user preferences.
+  1122→9. Journey creation and editing work.
+  1123→10. Check-ins persist and update the timeline.
+  1124→11. Charts reflect actual recorded entries.
+  1125→12. AI Skin Support follows the defined safety requirements.
+  1126→13. Community sharing requires explicit user consent.
+  1127→14. Private content stays private.
+  1128→15. The app is responsive on mobile and desktop.
+  1129→16. Empty states, errors, and loading states are designed properly.
+  1130→17. Demo data is clearly labelled.
+  1131→18. No major action is a non-functional placeholder.
+  1132→19. No unsupported medical claims are presented as fact.
+  1133→20. The application can be run and demonstrated through a browser.
+  1134→
+  1135→## Final deliverables
+  1136→
+  1137→Produce:
+  1138→
+  1139→- The complete working web application.
+  1140→- A responsive, polished user interface.
+  1141→- Functional product management and depletion estimates.
+  1142→- A working journey tracker with charts.
+  1143→- An AI Skin Support interface with a real integration or clearly labelled demonstration mode.
+  1144→- A community with privacy and sharing controls.
+  1145→- A working in-app notification system.
+  1146→- A clear explanation of any external services that require configuration.
+  1147→- A browser-accessible deployment URL, if the environment supports deployment.
+  1148→
+  1149→Do not stop after producing a plan, wireframe, or static landing page.
+  1150→
+  1151→Build the actual application and prioritise a reliable, beautiful, cohesive experience.
+  1152→
+  1153→**The final product should make a customer feel that ProofPath understands their journey, helps them stay informed, supports them when something goes wrong, and makes managing their products easier.**
