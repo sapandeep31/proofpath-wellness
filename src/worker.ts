@@ -49,12 +49,13 @@ function createInitialState() {
       frequency: "twice-daily",
       applicationsPerWeek: 14,
       price: 449,
+      purchaseLink: null,
       expiryDate: new Date(Date.now() + 300 * DAY).toISOString(),
       batchNumber: "HC-240115",
       notes: "Use after cleansing, morning and night.",
       instructions: "Apply a pea-sized amount to cleansed face and neck. Avoid immediate eye area.",
       ingredients: "Aqua, Glycerin, Niacinamide, Ceramide NP, Squalane, Cetearyl Alcohol, Panthenol, Allantoin",
-      status: "active",
+      status: "active" as const,
       firstReminderDays: 7,
       secondReminderEnabled: true,
       secondReminderDays: 3,
@@ -81,11 +82,13 @@ function createInitialState() {
       frequency: "custom",
       applicationsPerWeek: 1.4,
       price: 399,
+      purchaseLink: null,
       expiryDate: new Date(Date.now() + 150 * DAY).toISOString(),
+      batchNumber: "AH-231102",
       notes: "Massage into scalp, twice weekly.",
       instructions: "Massage into wet scalp, lather, rinse thoroughly.",
       ingredients: "Aqua, Coco-glucoside, Rosemary Leaf Extract, Caffeine, Panthenol, Citric Acid",
-      status: "active",
+      status: "active" as const,
       firstReminderDays: 7,
       secondReminderEnabled: true,
       secondReminderDays: 3,
@@ -112,10 +115,13 @@ function createInitialState() {
       frequency: "daily",
       applicationsPerWeek: 7,
       price: 549,
+      purchaseLink: null,
+      expiryDate: new Date(Date.now() + 200 * DAY).toISOString(),
+      batchNumber: "DC-240210",
       notes: "Focus on elbows, knees and shins.",
       instructions: "Massage into clean, dry skin until absorbed. Use daily after bathing.",
       ingredients: "Butyrospermum Parkii Butter, Glycerin, Urea, Coco-caprylate, Tocopherol",
-      status: "active",
+      status: "active" as const,
       firstReminderDays: 7,
       secondReminderEnabled: true,
       secondReminderDays: 3,
@@ -138,9 +144,9 @@ function createInitialState() {
       baselineSatisfaction: 2,
       baselineNotes: "Tracking if daily butter keeps skin comfortable through the season.",
       goal: "Keep my skin comfortable and hydrated all day",
-      checkinFrequency: "weekly",
+      checkinFrequency: "weekly" as const,
       privateNotes: "Check knees after morning walks.",
-      visibility: "private",
+      visibility: "private" as const,
       isDemo: true,
       createdAt: daysAgo(30),
       updatedAt: daysAgo(7),
@@ -156,9 +162,9 @@ function createInitialState() {
       baselineSatisfaction: 3,
       baselineNotes: "Starting gentler routine and tracking weekly.",
       goal: "Understand shedding pattern and keep consistent gentle routine",
-      checkinFrequency: "weekly",
+      checkinFrequency: "weekly" as const,
       privateNotes: null,
-      visibility: "private",
+      visibility: "private" as const,
       isDemo: true,
       createdAt: daysAgo(56),
       updatedAt: daysAgo(14),
@@ -171,9 +177,9 @@ function createInitialState() {
       journeyId: "journey_butter",
       date: daysAgo(28),
       overallRating: 3,
-      change: "same",
+      change: "same" as const,
       consistency: "most-days",
-      reactions: "none",
+      reactions: "none" as const,
       reactionDetails: null,
       notes: "Skin feels softer right after applying. No change in flakiness yet.",
       isDemo: true,
@@ -184,9 +190,9 @@ function createInitialState() {
       journeyId: "journey_butter",
       date: daysAgo(21),
       overallRating: 3,
-      change: "same",
+      change: "same" as const,
       consistency: "every-day",
-      reactions: "none",
+      reactions: "none" as const,
       reactionDetails: null,
       notes: "Kept the routine daily. Shins still a little dry by evening.",
       isDemo: true,
@@ -197,9 +203,9 @@ function createInitialState() {
       journeyId: "journey_butter",
       date: daysAgo(14),
       overallRating: 4,
-      change: "improved",
+      change: "improved" as const,
       consistency: "every-day",
-      reactions: "none",
+      reactions: "none" as const,
       reactionDetails: null,
       notes: "Flakiness on shins looks much better this week.",
       isDemo: true,
@@ -210,9 +216,9 @@ function createInitialState() {
       journeyId: "journey_butter",
       date: daysAgo(7),
       overallRating: 4,
-      change: "improved",
+      change: "improved" as const,
       consistency: "every-day",
-      reactions: "none",
+      reactions: "none" as const,
       reactionDetails: null,
       notes: "Elbows feel smooth for the first time in months. Applying post-shower helps.",
       isDemo: true,
@@ -223,9 +229,9 @@ function createInitialState() {
       journeyId: "journey_shampoo",
       date: daysAgo(35),
       overallRating: 3,
-      change: "same",
+      change: "same" as const,
       consistency: "most-days",
-      reactions: "none",
+      reactions: "none" as const,
       reactionDetails: null,
       notes: "Scalp feels clean and comfortable.",
       isDemo: true,
@@ -236,9 +242,9 @@ function createInitialState() {
       journeyId: "journey_shampoo",
       date: daysAgo(14),
       overallRating: 4,
-      change: "improved",
+      change: "improved" as const,
       consistency: "most-days",
-      reactions: "none",
+      reactions: "none" as const,
       reactionDetails: null,
       notes: "Wash-day shedding looks lower. Staying consistent.",
       isDemo: true,
@@ -250,7 +256,7 @@ function createInitialState() {
     {
       id: "n_1",
       type: "replenishment-1",
-      category: "replenishment",
+      category: "replenishment" as const,
       title: "Hydra Calm Daily Moisturiser is low",
       body: "Estimated runout in ~7 days based on twice-daily usage. Consider reordering.",
       productId: "prod_moisturiser",
@@ -263,7 +269,7 @@ function createInitialState() {
     {
       id: "n_2",
       type: "checkin",
-      category: "checkin",
+      category: "checkin" as const,
       title: "Weekly check-in reflection ready",
       body: "Reflect on how your skin responded to your Be Bodywise routine this week.",
       productId: null,
@@ -276,7 +282,7 @@ function createInitialState() {
     {
       id: "n_3",
       type: "community",
-      category: "community",
+      category: "community" as const,
       title: "New reply in The ProofPath Circle",
       body: "Meera S. replied to a discussion about routine consistency.",
       productId: null,
@@ -472,17 +478,53 @@ function createInitialState() {
       community: true,
       system: true,
     },
-    recentlyViewed: [],
+    recentlyViewed: [] as string[],
     aiConfigured: true,
-    aiKeySource: "env",
+    aiKeySource: "env" as const,
     aiKeyHint: "AIza…demo",
-    aiModel: "gemini-2.5-flash",
+    aiModel: "gemini-2.0-flash",
   };
 
-  return { products, journeys, checkins, notifications, posts, guides, profile, usageLogs: [] };
+  const chatMessages = [
+    {
+      id: "msg_1",
+      role: "user" as const,
+      content: "I noticed small bumps after starting a new moisturiser. Should I keep using it?",
+      productId: "prod_moisturiser",
+      imageMime: null,
+      hasImage: false,
+      demo: true,
+      createdAt: hoursAgo(30),
+    },
+    {
+      id: "msg_2",
+      role: "model" as const,
+      content:
+        "I understand how worrying that can feel — let's review it calmly.\n\n• When did the bumps first appear?\n• Are they itchy or red?\n• Have you paused applying the product?\n\nGeneral guidance:\n• Pausing the suspected product temporarily is a widely suggested first step.\n• Avoid introducing harsh scrubs or home remedies while your skin recovers.\n• If symptoms persist or worsen, please consult a qualified healthcare professional.",
+      productId: "prod_moisturiser",
+      imageMime: null,
+      hasImage: false,
+      demo: true,
+      createdAt: hoursAgo(30),
+    },
+  ];
+
+  const summaries: any[] = [];
+
+  return { products, journeys, checkins, notifications, posts, guides, profile, chatMessages, summaries, usageLogs: [] };
 }
 
-let state = createInitialState();
+let globalState: ReturnType<typeof createInitialState> | null = null;
+function getState() {
+  if (!globalState) {
+    globalState = createInitialState();
+  }
+  return globalState;
+}
+function resetState() {
+  globalState = createInitialState();
+  return globalState;
+}
 
 function computeProductEstimate(p: any) {
   const current = p.currentQuantity ?? 0;
@@ -501,7 +543,7 @@ function computeProductEstimate(p: any) {
     weeklyConsumption: Number((dailyUsage * 7).toFixed(1)),
     daysRemaining,
     runOutDate,
-    basis: "configured",
+    basis: "configured" as const,
     basisLabel: "Calculated from your logged routine frequency and application amount.",
   };
 }
@@ -512,7 +554,7 @@ function jsonResponse(data: unknown, status = 200) {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type, Authorization",
     },
   });
@@ -521,12 +563,13 @@ function jsonResponse(data: unknown, status = 200) {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+    const state = getState();
 
     if (request.method === "OPTIONS") {
       return new Response(null, {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
           "Access-Control-Allow-Headers": "Content-Type, Authorization",
         },
       });
@@ -534,26 +577,44 @@ export default {
 
     // ---------------- API ROUTES ----------------
 
-    // Profile
+    // 1. Bootstrap - Essential for app initialization
+    if (url.pathname === "/api/bootstrap" && request.method === "GET") {
+      const aiConfigured = Boolean(env.GEMINI_API_KEY);
+      const prof = {
+        ...state.profile,
+        aiConfigured,
+        aiKeySource: aiConfigured ? ("env" as const) : null,
+        aiKeyHint: aiConfigured ? `${env.GEMINI_API_KEY!.slice(0, 4)}…${env.GEMINI_API_KEY!.slice(-4)}` : null,
+        aiModel: env.GEMINI_MODEL || "gemini-2.0-flash",
+      };
+      return jsonResponse({
+        profile: prof,
+        seeded: true,
+      });
+    }
+
+    // 2. Profile
     if (url.pathname === "/api/profile") {
       if (request.method === "GET") {
         const aiConfigured = Boolean(env.GEMINI_API_KEY);
         return jsonResponse({
-          ...state.profile,
-          aiConfigured,
-          aiKeySource: aiConfigured ? "env" : null,
-          aiKeyHint: aiConfigured ? `${env.GEMINI_API_KEY!.slice(0, 4)}…${env.GEMINI_API_KEY!.slice(-4)}` : null,
-          aiModel: env.GEMINI_MODEL || "gemini-2.5-flash",
+          profile: {
+            ...state.profile,
+            aiConfigured,
+            aiKeySource: aiConfigured ? "env" : null,
+            aiKeyHint: aiConfigured ? `${env.GEMINI_API_KEY!.slice(0, 4)}…${env.GEMINI_API_KEY!.slice(-4)}` : null,
+            aiModel: env.GEMINI_MODEL || "gemini-2.0-flash",
+          },
         });
       }
-      if (request.method === "PUT") {
+      if (request.method === "PUT" || request.method === "PATCH") {
         const body = (await request.json().catch(() => ({}))) as any;
         state.profile = { ...state.profile, ...body };
         return jsonResponse(state.profile);
       }
     }
 
-    // Dashboard
+    // 3. Dashboard
     if (url.pathname === "/api/dashboard" && request.method === "GET") {
       const activeProducts = state.products.map((p) => ({
         ...p,
@@ -610,14 +671,14 @@ export default {
       });
     }
 
-    // Products
+    // 4. Products
     if (url.pathname === "/api/products") {
       if (request.method === "GET") {
         const enriched = state.products.map((p) => ({
           ...p,
           estimate: computeProductEstimate(p),
         }));
-        return jsonResponse(enriched);
+        return jsonResponse({ products: enriched });
       }
       if (request.method === "POST") {
         const body = (await request.json().catch(() => ({}))) as any;
@@ -628,7 +689,7 @@ export default {
           updatedAt: new Date().toISOString(),
         };
         state.products.push(newProd);
-        return jsonResponse(newProd, 201);
+        return jsonResponse({ product: newProd }, 201);
       }
     }
 
@@ -641,7 +702,7 @@ export default {
       if (request.method === "GET") {
         const estimate = computeProductEstimate(prod);
         return jsonResponse({
-          ...prod,
+          product: prod,
           estimate,
           usageLogs: [],
           reminderPlan: [
@@ -658,7 +719,7 @@ export default {
       if (request.method === "PUT") {
         const body = (await request.json().catch(() => ({}))) as any;
         Object.assign(prod!, body, { updatedAt: new Date().toISOString() });
-        return jsonResponse(prod);
+        return jsonResponse({ product: prod });
       }
       if (request.method === "DELETE") {
         state.products = state.products.filter((p) => p.id !== id);
@@ -682,14 +743,14 @@ export default {
       return jsonResponse({ ok: true, product: prod, estimate: computeProductEstimate(prod) });
     }
 
-    // Journeys
+    // 5. Journeys
     if (url.pathname === "/api/journeys") {
       if (request.method === "GET") {
         const enriched = state.journeys.map((j) => ({
           ...j,
           product: state.products.find((p) => p.id === j.productId) || null,
         }));
-        return jsonResponse(enriched);
+        return jsonResponse({ journeys: enriched });
       }
       if (request.method === "POST") {
         const body = (await request.json().catch(() => ({}))) as any;
@@ -700,7 +761,7 @@ export default {
           updatedAt: new Date().toISOString(),
         };
         state.journeys.push(newJ);
-        return jsonResponse(newJ, 201);
+        return jsonResponse({ journey: newJ }, 201);
       }
     }
 
@@ -713,7 +774,7 @@ export default {
       if (request.method === "GET") {
         const checkins = state.checkins.filter((c) => c.journeyId === id);
         return jsonResponse({
-          ...j,
+          journey: j,
           product: state.products.find((p) => p.id === j.productId) || null,
           checkins,
         });
@@ -721,7 +782,7 @@ export default {
       if (request.method === "PUT") {
         const body = (await request.json().catch(() => ({}))) as any;
         Object.assign(j, body, { updatedAt: new Date().toISOString() });
-        return jsonResponse(j);
+        return jsonResponse({ journey: j });
       }
       if (request.method === "DELETE") {
         state.journeys = state.journeys.filter((item) => item.id !== id);
@@ -729,10 +790,10 @@ export default {
       }
     }
 
-    // Check-ins
+    // 6. Check-ins
     if (url.pathname === "/api/checkins") {
       if (request.method === "GET") {
-        return jsonResponse(state.checkins);
+        return jsonResponse({ checkins: state.checkins });
       }
       if (request.method === "POST") {
         const body = (await request.json().catch(() => ({}))) as any;
@@ -743,14 +804,14 @@ export default {
           createdAt: new Date().toISOString(),
         };
         state.checkins.unshift(newCheckin);
-        return jsonResponse(newCheckin, 201);
+        return jsonResponse({ checkin: newCheckin }, 201);
       }
     }
 
-    // Notifications
+    // 7. Notifications
     if (url.pathname === "/api/notifications") {
       if (request.method === "GET") {
-        return jsonResponse(state.notifications);
+        return jsonResponse({ notifications: state.notifications });
       }
       if (request.method === "PUT") {
         const body = (await request.json().catch(() => ({}))) as any;
@@ -764,7 +825,7 @@ export default {
       }
     }
 
-    // Community
+    // 8. Community
     if (url.pathname === "/api/community") {
       if (request.method === "GET") {
         const category = url.searchParams.get("category");
@@ -772,7 +833,7 @@ export default {
         if (category && category !== "all") {
           filtered = filtered.filter((p) => p.category.toLowerCase() === category.toLowerCase());
         }
-        return jsonResponse(filtered);
+        return jsonResponse({ posts: filtered });
       }
       if (request.method === "POST") {
         const body = (await request.json().catch(() => ({}))) as any;
@@ -797,7 +858,7 @@ export default {
           reactions: [{ kind: "supportive", count: 1 }],
         };
         state.posts.unshift(newPost);
-        return jsonResponse(newPost, 201);
+        return jsonResponse({ post: newPost }, 201);
       }
     }
 
@@ -816,7 +877,7 @@ export default {
         createdAt: new Date().toISOString(),
       };
       post.comments.push(newComment);
-      return jsonResponse(newComment, 201);
+      return jsonResponse({ comment: newComment }, 201);
     }
 
     const postReactionMatch = url.pathname.match(/^\/api\/community\/([^/]+)\/reactions$/);
@@ -832,7 +893,7 @@ export default {
       return jsonResponse({ ok: true, reactions: post.reactions });
     }
 
-    // Product Guide
+    // 9. Product Guide
     if (url.pathname === "/api/guide" && request.method === "GET") {
       const q = url.searchParams.get("q")?.toLowerCase();
       let res = state.guides;
@@ -844,16 +905,16 @@ export default {
             g.ingredients.some((i) => i.name.toLowerCase().includes(q))
         );
       }
-      return jsonResponse(res);
+      return jsonResponse({ guides: res });
     }
 
-    // Demo reset
+    // 10. Demo reset
     if (url.pathname === "/api/demo" && request.method === "POST") {
-      state = createInitialState();
+      resetState();
       return jsonResponse({ ok: true });
     }
 
-    // AI Settings
+    // 11. AI Settings
     if (url.pathname === "/api/settings/ai") {
       const aiConfigured = Boolean(env.GEMINI_API_KEY);
       if (request.method === "GET") {
@@ -862,7 +923,7 @@ export default {
           envConfigured: aiConfigured,
           source: aiConfigured ? "env" : null,
           keyHint: aiConfigured ? `${env.GEMINI_API_KEY!.slice(0, 4)}…${env.GEMINI_API_KEY!.slice(-4)}` : null,
-          model: env.GEMINI_MODEL || "gemini-2.5-flash",
+          model: env.GEMINI_MODEL || "gemini-2.0-flash",
         });
       }
       if (request.method === "PUT") {
@@ -870,53 +931,58 @@ export default {
       }
     }
 
-    // AI Chat - Google Gemini Live Integration
-    if (url.pathname === "/api/chat" && request.method === "POST") {
-      const body = (await request.json().catch(() => ({}))) as any;
-      const userMessage = body.message || "";
-      const productId = body.productId;
-      const product = productId ? state.products.find((p) => p.id === productId) : null;
-
-      let productContext = "";
-      if (product) {
-        productContext = `\n\nCURRENT USER PRODUCT CONTEXT:\n- Name: ${product.name}\n- Category: ${product.category}\n- Ingredients: ${product.ingredients || "Not specified"}\n- Instructions: ${product.instructions || "Not specified"}\n- Usage frequency: ${product.frequency || "Not specified"}`;
+    // 12. AI Chat
+    if (url.pathname === "/api/chat") {
+      if (request.method === "GET") {
+        return jsonResponse({
+          messages: state.chatMessages,
+          aiConfigured: Boolean(env.GEMINI_API_KEY),
+          aiModel: env.GEMINI_MODEL || "gemini-2.0-flash",
+        });
       }
+      if (request.method === "DELETE") {
+        state.chatMessages = [];
+        return jsonResponse({ ok: true });
+      }
+      if (request.method === "POST") {
+        const body = (await request.json().catch(() => ({}))) as any;
+        const userMessage = body.message || "";
+        const productId = body.productId;
+        const product = productId ? state.products.find((p) => p.id === productId) : null;
 
-      const rawKey = env.GEMINI_API_KEY || "";
-      const apiKey = rawKey.replace(/^[^a-zA-Z0-9_\-]+/, "").trim();
-      const model = env.GEMINI_MODEL || "gemini-2.0-flash";
+        // Record user message
+        const userMsg = {
+          id: `msg_${Date.now()}`,
+          role: "user" as const,
+          content: userMessage,
+          productId: productId || null,
+          imageMime: body.imageMime || null,
+          hasImage: Boolean(body.imageData),
+          demo: false,
+          createdAt: new Date().toISOString(),
+        };
+        state.chatMessages.push(userMsg);
 
-      if (apiKey && apiKey.length > 5) {
-        try {
-          const contents = [
-            {
-              role: "user",
-              parts: [{ text: userMessage + productContext }],
-            },
-          ];
+        let productContext = "";
+        if (product) {
+          productContext = `\n\nCURRENT USER PRODUCT CONTEXT:\n- Name: ${product.name}\n- Category: ${product.category}\n- Ingredients: ${product.ingredients || "Not specified"}\n- Instructions: ${product.instructions || "Not specified"}\n- Usage frequency: ${product.frequency || "Not specified"}`;
+        }
 
-          let geminiRes = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "x-goog-api-key": apiKey,
+        const rawKey = env.GEMINI_API_KEY || "";
+        const apiKey = rawKey.replace(/^[^a-zA-Z0-9_\-]+/, "").trim();
+        const model = env.GEMINI_MODEL || "gemini-2.0-flash";
+
+        if (apiKey && apiKey.length > 5) {
+          try {
+            const contents = [
+              {
+                role: "user",
+                parts: [{ text: userMessage + productContext }],
               },
-              body: JSON.stringify({
-                systemInstruction: { parts: [{ text: SKIN_GUIDE_SYSTEM }] },
-                contents,
-                generationConfig: {
-                  temperature: 0.7,
-                  maxOutputTokens: 1200,
-                },
-              }),
-            }
-          );
+            ];
 
-          if (!geminiRes.ok && model !== "gemini-1.5-flash") {
-            geminiRes = await fetch(
-              `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`,
+            const geminiRes = await fetch(
+              `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
               {
                 method: "POST",
                 headers: {
@@ -933,40 +999,64 @@ export default {
                 }),
               }
             );
-          }
 
-          if (geminiRes.ok) {
-            const data = (await geminiRes.json()) as any;
-            const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (text) {
-              return jsonResponse({
-                role: "model",
-                content: text,
-                demo: false,
-                createdAt: new Date().toISOString(),
-              });
+            if (geminiRes.ok) {
+              const data = (await geminiRes.json()) as any;
+              const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+              if (text) {
+                const replyMsg = {
+                  id: `reply_${Date.now()}`,
+                  role: "model" as const,
+                  content: text,
+                  productId: productId || null,
+                  imageMime: null,
+                  hasImage: false,
+                  demo: false,
+                  createdAt: new Date().toISOString(),
+                };
+                state.chatMessages.push(replyMsg);
+                return jsonResponse({ reply: replyMsg, demo: false });
+              }
             }
-          } else {
-            const errBody = await geminiRes.text();
-            if (url.searchParams.get("debug")) {
-              return jsonResponse({ error: "Gemini API non-200", status: geminiRes.status, body: errBody });
-            }
-          }
-        } catch (e: any) {
-          if (url.searchParams.get("debug")) {
-            return jsonResponse({ error: "Gemini API exception", message: e?.message });
+          } catch (e: any) {
+            // Fall through to safe demo response
           }
         }
-      }
 
-      // Safe Demo Fallback (Be Bodywise Ask Skin Guide)
-      return jsonResponse({
-        role: "model",
-        content:
-          "I understand your question about your skincare experience — let's review it carefully.\n\nA few helpful questions:\n• When did you first notice this reaction after starting your product?\n• Is the area itchy, red, or stinging?\n• Have you paused applying the product?\n\nGeneral guidance:\n• Timing alone doesn't prove an individual product caused a reaction, but stopping the suspected product temporarily is a sensible first step.\n• Avoid introducing harsh scrubs or home remedies while your skin recovers.\n• If discomfort, swelling, or redness persists or worsens, please consult a qualified healthcare professional or dermatologist.",
-        demo: true,
-        createdAt: new Date().toISOString(),
-      });
+        // Safe Demo Fallback (Be Bodywise Ask Skin Guide)
+        const demoReply = {
+          id: `reply_${Date.now()}`,
+          role: "model" as const,
+          content:
+            "I understand your question about your skincare experience — let's review it carefully.\n\nA few helpful questions:\n• When did you first notice this reaction after starting your product?\n• Is the area itchy, red, or stinging?\n• Have you paused applying the product?\n\nGeneral guidance:\n• Timing alone doesn't prove an individual product caused a reaction, but stopping the suspected product temporarily is a sensible first step.\n• Avoid introducing harsh scrubs or home remedies while your skin recovers.\n• If discomfort, swelling, or redness persists or worsens, please consult a qualified healthcare professional or dermatologist.",
+          productId: productId || null,
+          imageMime: null,
+          hasImage: false,
+          demo: true,
+          createdAt: new Date().toISOString(),
+        };
+        state.chatMessages.push(demoReply);
+        return jsonResponse({ reply: demoReply, demo: true });
+      }
+    }
+
+    // 13. Summaries
+    if (url.pathname === "/api/chat/summary") {
+      if (request.method === "GET") {
+        return jsonResponse({ summaries: state.summaries });
+      }
+      if (request.method === "POST") {
+        const body = (await request.json().catch(() => ({}))) as any;
+        const newSummary = {
+          id: `sum_${Date.now()}`,
+          title: body.title || "Routine & Symptom Summary",
+          content: body.content || "",
+          productId: body.productId || null,
+          createdAt: new Date().toISOString(),
+        };
+        state.summaries.push(newSummary);
+        return jsonResponse({ summary: newSummary }, 201);
+      }
     }
 
     // Delegate static assets and HTML pages to Cloudflare Assets
