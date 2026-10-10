@@ -482,7 +482,7 @@ function createInitialState() {
     aiConfigured: true,
     aiKeySource: "env" as const,
     aiKeyHint: "AIza…demo",
-    aiModel: "gemini-2.0-flash",
+    aiModel: "gemini-3.8-flash",
   };
 
   const chatMessages = [
@@ -585,7 +585,7 @@ export default {
         aiConfigured,
         aiKeySource: aiConfigured ? ("env" as const) : null,
         aiKeyHint: aiConfigured ? `${env.GEMINI_API_KEY!.slice(0, 4)}…${env.GEMINI_API_KEY!.slice(-4)}` : null,
-        aiModel: env.GEMINI_MODEL || "gemini-2.0-flash",
+        aiModel: env.GEMINI_MODEL || "gemini-3.8-flash",
       };
       return jsonResponse({
         profile: prof,
@@ -603,7 +603,7 @@ export default {
             aiConfigured,
             aiKeySource: aiConfigured ? "env" : null,
             aiKeyHint: aiConfigured ? `${env.GEMINI_API_KEY!.slice(0, 4)}…${env.GEMINI_API_KEY!.slice(-4)}` : null,
-            aiModel: env.GEMINI_MODEL || "gemini-2.0-flash",
+            aiModel: env.GEMINI_MODEL || "gemini-3.8-flash",
           },
         });
       }
@@ -923,7 +923,7 @@ export default {
           envConfigured: aiConfigured,
           source: aiConfigured ? "env" : null,
           keyHint: aiConfigured ? `${env.GEMINI_API_KEY!.slice(0, 4)}…${env.GEMINI_API_KEY!.slice(-4)}` : null,
-          model: env.GEMINI_MODEL || "gemini-2.0-flash",
+          model: env.GEMINI_MODEL || "gemini-3.8-flash",
         });
       }
       if (request.method === "PUT") {
@@ -937,7 +937,7 @@ export default {
         return jsonResponse({
           messages: state.chatMessages,
           aiConfigured: Boolean(env.GEMINI_API_KEY),
-          aiModel: env.GEMINI_MODEL || "gemini-2.0-flash",
+          aiModel: env.GEMINI_MODEL || "gemini-3.8-flash",
         });
       }
       if (request.method === "DELETE") {
@@ -970,7 +970,7 @@ export default {
 
         const rawKey = env.GEMINI_API_KEY || "";
         const apiKey = rawKey.replace(/^[^a-zA-Z0-9_\-]+/, "").trim();
-        const model = env.GEMINI_MODEL || "gemini-2.0-flash";
+        const model = env.GEMINI_MODEL || "gemini-3.8-flash";
 
         if (apiKey && apiKey.length > 5) {
           try {
@@ -981,7 +981,7 @@ export default {
               },
             ];
 
-            const geminiRes = await fetch(
+            let geminiRes = await fetch(
               `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
               {
                 method: "POST",
@@ -999,6 +999,27 @@ export default {
                 }),
               }
             );
+
+            if (!geminiRes.ok && model !== "gemini-2.5-flash") {
+              geminiRes = await fetch(
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`,
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    "x-goog-api-key": apiKey,
+                  },
+                  body: JSON.stringify({
+                    systemInstruction: { parts: [{ text: SKIN_GUIDE_SYSTEM }] },
+                    contents,
+                    generationConfig: {
+                      temperature: 0.7,
+                      maxOutputTokens: 1200,
+                    },
+                  }),
+                }
+              );
+            }
 
             if (geminiRes.ok) {
               const data = (await geminiRes.json()) as any;

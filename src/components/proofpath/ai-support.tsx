@@ -467,7 +467,7 @@ export function GeminiKeyDialog({ open, onClose }: { open: boolean; onClose: () 
               — it is stored server-side only (never in the browser) and can be removed at any time.
             </DialogDescription>
           </DialogHeader>
-          <GeminiKeyForm onClose={onClose} currentHint={profile?.aiKeyHint ?? null} currentSource={profile?.aiKeySource ?? null} defaultModel={profile?.aiModel ?? "gemini-2.5-flash"} hasSaved={profile?.aiKeySource === "saved"} />
+          <GeminiKeyForm onClose={onClose} currentHint={profile?.aiKeyHint ?? null} currentSource={profile?.aiKeySource ?? null} defaultModel={profile?.aiModel ?? "gemini-3.8-flash"} hasSaved={profile?.aiKeySource === "saved"} />
         </DialogContent>
       )}
     </Dialog>
@@ -536,8 +536,8 @@ function GeminiKeyForm({
           onChange={(e) => setModel(e.target.value)}
           className="w-full h-10 rounded-xl border border-border bg-white px-3 text-[13px] focus:outline-2 focus:outline-ring"
         >
-          <option value="gemini-2.5-flash">gemini-2.5-flash (recommended)</option>
-          <option value="gemini-2.0-flash">gemini-2.0-flash</option>
+          <option value="gemini-3.8-flash">gemini-3.8-flash (recommended)</option>
+          <option value="gemini-2.5-flash">gemini-2.5-flash</option>
           <option value="gemini-2.5-pro">gemini-2.5-pro</option>
         </select>
       </div>
